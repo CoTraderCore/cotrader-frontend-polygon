@@ -1,4 +1,4 @@
-// trade via coswap
+// trade via QuickSwap
 
 import React, { Component } from 'react'
 import {
@@ -7,7 +7,7 @@ import {
   ERC20ABI,
   APIEnpoint,
   UNIRouterABI,
-  CoSwapRouter,
+  QuickSwapRouter,
   WETH,
   ExchangePortalAddressLight
 } from '../../../config.js'
@@ -28,7 +28,7 @@ import Pending from '../../templates/Spiners/Pending'
 import BigNumber from 'bignumber.js'
 import SelectToken from './SelectToken'
 
-class TradeViaCoSwap extends Component {
+class TradeViaQuickSwap extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -193,7 +193,7 @@ class TradeViaCoSwap extends Component {
 
 
   // trade via 1 inch
-  tradeViaCoSwap = async () => {
+  tradeViaQuickSwap = async () => {
     try{
       const smartFund = new this.props.web3.eth.Contract(SmartFundABIV7, this.props.smartFundAddress)
       const block = await this.props.web3.eth.getBlockNumber()
@@ -253,7 +253,7 @@ class TradeViaCoSwap extends Component {
       const status = await this.checkFundBalance()
       if(status){
         this.setState({ prepareData:true })
-        this.tradeViaCoSwap()
+        this.tradeViaQuickSwap()
       }else{
         this.setState({ ERRORText:  `Your smart fund don't have enough ${this.state.Send}` })
       }
@@ -295,7 +295,7 @@ class TradeViaCoSwap extends Component {
       ? WETH
       : to
 
-      const router = new this.props.web3.eth.Contract(UNIRouterABI, CoSwapRouter)
+      const router = new this.props.web3.eth.Contract(UNIRouterABI, QuickSwapRouter)
       const data = await router.methods.getAmountsOut(src, [_from, _to]).call()
       price = data[1]
     }
@@ -472,7 +472,7 @@ class TradeViaCoSwap extends Component {
             )
             :
             (
-              <Alert variant="danger">Please update portal to latest version, for enable CoSwap DEX in your fund</Alert>
+              <Alert variant="danger">Please update portal to latest version, for enable QuickSwap DEX in your fund</Alert>
             )
           }
 
@@ -491,4 +491,4 @@ class TradeViaCoSwap extends Component {
     )
   }
 }
-export default TradeViaCoSwap
+export default TradeViaQuickSwap

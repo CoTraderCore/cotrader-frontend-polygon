@@ -17,12 +17,11 @@ import {
   Tab
 } from "react-bootstrap"
 
-import MigrateToNewPortal from '../MigrateToNewPortal'
 import SetGasPrice from '../../settings/SetGasPrice'
 
 // trade modals
 import TradeViaOneInch from './TradeViaOneInch'
-import TradeViaCoSwap from './TradeViaCoSwap'
+import TradeViaQuickSwap from './TradeViaQuickSwap'
 
 
 class TradeModal extends Component {
@@ -109,8 +108,8 @@ class TradeModal extends Component {
                 closeModal={this.closeModal}
               />
             </Tab>
-            <Tab eventKey="coSwap" title="CoSwap">
-              <TradeViaCoSwap
+            <Tab eventKey="quickSwap" title="QuickSwap">
+              <TradeViaQuickSwap
                 web3={this.props.web3}
                 accounts={this.props.accounts}
                 smartFundAddress={this.props.smartFundAddress}
@@ -121,16 +120,6 @@ class TradeModal extends Component {
               />
             </Tab>
           </Tabs>
-
-
-          {/* check if need update portal */}
-          <MigrateToNewPortal
-            exchangePortalAddress={this.state.exchangePortalAddress}
-            web3={this.props.web3}
-            accounts={this.props.accounts}
-            smartFundAddress={this.props.smartFundAddress}
-            closeModal={this.closeModal}
-          />
 
           {/* Update gas price */}
           <br />
