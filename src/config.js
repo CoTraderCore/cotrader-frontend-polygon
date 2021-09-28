@@ -6,33 +6,26 @@ export const MAX_TOKENS = 20
 
 export const OneInchApi = 'https://api.1inch.exchange/v3.0/56/'
 
-export const ExchangePortalDeprecated = '0xC8A2Ba3E9CE03f78551d7dE5706Cc275d4D3130f'
-export const MockExchangePortal = '0xe81F3fF8c7D6F2E3f19A7872fD32D5EAC5491C91'
+export const ExchangePortalDeprecated = ''
+export const MockExchangePortal = ''
 
 // BSC
 export const NeworkID = 56
 // V9
-export const SmartFundRegistryADDRESS = '0x759563F3A0f51A202e504BE5Ea3DeF0D3b4e6933'
+export const SmartFundRegistryADDRESS = ''
 
-export const EtherscanLink = 'https://bscscan.com/'
+export const EtherscanLink = ''
 export const APIEnpoint = !isLocal ? 'https://api-bsc.cotrader.com/' : 'http://localhost:9005/'
-export const BloxyLink = 'https://bloxy.info/portfolios/'
-export const PricePortalPancake = "0xaBbD442181DE83c54c4Cf14BbF5C03fBda8887df"
+export const BloxyLink = ''
+export const PricePortalPancake = ""
 // pools, defi, 1inch
-export const ExchangePortalAddressFull = '0x5f0b0f12718c256a0E172d199AA50F7456fd24AA'
+export const ExchangePortalAddressFull = ''
 // only erc20
-export const ExchangePortalAddressLight = '0x169331EC668f3ACa19feb89AC300C4b291c4C586'
-export const WETH = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
-export const CoSwapRouter = '0x82d45a1cCaBE624eEB275B9d3DAA177aFf82953f'
+export const ExchangePortalAddressLight = ''
+export const WETH = ''
+export const CoSwapRouter = ''
 
 
-// // TEST NET BSC
-// export const NeworkID = 97
-// export const SmartFundRegistryADDRESS = '0xdb622775C42B83bfE11e218E0F8b8ec3435ACdE9'
-// export const ExchangePortalAddressFull = '0x79E33056324447e0153239C21DF3e05eE43dF86C'
-// export const EtherscanLink = 'https://testnet.bscscan.com/'
-// export const APIEnpoint = !isLocal ? 'https://api2.cotrader.com/' : 'http://localhost:9000/'
-// export const BloxyLink = 'https://bloxy.info/portfolios/'
 
 
 /* TODO: MOVE ALL ABI to a separate file ABI.js*/
