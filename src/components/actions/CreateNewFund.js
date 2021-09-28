@@ -24,7 +24,7 @@ class CreateNewFund extends Component {
     this.state = {
       Show: false,
       Percent: 20,  // NOTE: this number should be mul by 100 !!!
-      FundAsset: 'BNB',
+      FundAsset: 'MATIC',
       FundName: '',
       TradeVerification: true
     }
@@ -83,7 +83,7 @@ class CreateNewFund extends Component {
     this.setState({
       Show: false,
       Percent: 20,
-      FundAsset: 'BNB',
+      FundAsset: 'MATIC',
       FundName: '',
       TradeVerification: true
     })

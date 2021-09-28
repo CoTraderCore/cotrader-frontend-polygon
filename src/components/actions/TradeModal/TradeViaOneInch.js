@@ -37,7 +37,7 @@ class TradeViaOneInch extends Component {
     super(props, context);
 
     this.state = {
-      Send: 'BNB',
+      Send: 'MATIC',
       Recive:'BUSD',
       AmountSend:0,
       AmountRecive:0,

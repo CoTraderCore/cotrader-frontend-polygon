@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 import {
   SmartFundABIV7,
-  NeworkID,
   ERC20ABI,
   APIEnpoint,
   UNIRouterABI,
@@ -33,8 +32,8 @@ class TradeViaQuickSwap extends Component {
     super(props, context);
 
     this.state = {
-      Send: 'BNB',
-      Recive:'bCOT',
+      Send: 'MATIC',
+      Recive:'DAI',
       AmountSend:0,
       AmountRecive:0,
       slippageFrom:0,
@@ -73,19 +72,7 @@ class TradeViaQuickSwap extends Component {
 
   // get tokens addresses and symbols from paraswap api
   initData = async () => {
-    if(NeworkID === 56){
-      const tokens = [
-        { symbol: "BNB", address: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", decimals: 18 },
-        { symbol: "bCOT", address: "0x304fc73e86601a61a6c6db5b0eafea587622acdc", decimals: 18 }
-      ]
-      const symbols = ['BNB', 'bCOT']
-      if(this._isMounted)
-        this.setState({ tokens, symbols })
-    }
-
-    else{
-      alert("There are no tokens for your network")
-    }
+    alert("Please INIT Tokens from api ")
   }
 
   // Show err msg if there are some msg
