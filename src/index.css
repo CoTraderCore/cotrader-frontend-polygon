@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9fbfd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.cardsAdditional{
+  /*background-color: white;*/
+}
+.modal-dialog{margin-top: 5rem;}
+.buttonsAdditional {
+  min-width: 128px;
+  max-width: 140px;
+}
+.page-item.active .page-link{background-color:#039be5;border-color:#039be5;}
+.theme_switch{position: absolute;top: 12px;z-index: 9999;right: 20px;}
+body.light_theme a{color: #039be5;}
+body.light_theme .MuiDrawer-root a{color: rgba(0, 0, 0, 0.87)!important;}
+body.dark_theme{background: #000;color: #fff;}
+body.dark_theme {color: #fff;}
+body.dark_theme .MuiAppBar-colorPrimary{background-color: #039be5;}
+body.dark_theme .MuiPaper-root, body.dark_theme .MuiListItemIcon-root, body.dark_theme .MuiDrawer-paper .MuiIconButton-root {color: #fff;}
+body.dark_theme .modal-content{background-color: #333;border: 1px solid rgba(255,255,255,0.1);}
+body.dark_theme .modal-footer, body.dark_theme .modal-header{border-color:rgba(255,255,255,0.1)}
+body.dark_theme .list-group-item{background-color:rgba(255, 255, 255, 0);border: 1px solid rgba(255, 255, 255, 0.05);}
+body.dark_theme .close{color: #fff;text-shadow: 0 1px 0 #000;}
+body.dark_theme .card{background-color: rgba(255, 255, 255, 0.05);}
+body.dark_theme .card-header{background-color: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.08);}
+body.dark_theme .card-footer{background-color: transparent; border-top: 1px solid rgba(255, 255, 255, 0.08);}
+body.dark_theme .btn-outline-primary {color: #039be5;border-color: #039be5; margin: 1px;border-radius:0}
+body.dark_theme .btn-outline-primary:hover {background-color: #039be5;border-color: #039be5; color:#fff}
+body.dark_theme .container-fluid a{color: #039be5;}
+body.dark_theme .MuiTab-textColorPrimary{color:#fff}
+body.dark_theme .MuiTab-textColorPrimary.Mui-selected {color: #039be5;}
+body.dark_theme .MuiButton-containedPrimary{background-color: #039be5;}
+body.dark_theme .MuiContainer-root .MuiPaper-root{background-color:rgba(255,255,255,0.05);}
+body.dark_theme .MuiDrawer-root .MuiPaper-root{background-color: #000;}
+body.dark_theme .pagination .page-item .page-link{background-color: transparent;border-color: #039be5;color: #039be5;}
+body.dark_theme .pagination .page-item.active .page-link{background-color: #039be5;border-color: #039be5;color: #fff;}
+body.dark_theme .MuiOutlinedInput-notchedOutline {border-color: rgba(255, 255, 255, 0.51);}
+body.dark_theme span[class^="PrivateTabIndicator-colorPrimary-"],body.dark_theme span[class*="PrivateTabIndicator-colorPrimary-"]{background-color: #039be5;}
+body.dark_theme .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {border-color: #039be5;}
+body.dark_theme .MuiFormLabel-root.Mui-focused {color: #039be5;}
+body.dark_theme .alert-primary, body.dark_theme .alert-dark{background-color:rgba(3, 155, 229, 0.2);border-color:rgba(3, 155, 229, 0.3);color: #f9f9f9;}
+body.dark_theme .alert-primary a, body.dark_theme .alert-dark a{color:#039be5}
+.total-found{padding: 0px; text-align: center;}
+.container-fluid a {color: #039be5;}
+.MuiFormLabel-root.Mui-focused {color: #039be5;}
+.modal-header{background-color: transparent; border-bottom: 1px solid rgba(0, 0, 0, 0.08);}
+.btn-outline-primary {color: #039be5;border-color: #039be5; margin: 1px;border-radius:0}
+.btn-outline-primary:hover {background-color: #039be5;border-color: #039be5}
+.card-header{border-bottom: 1px solid rgba(255,255,255,0.2);}
+.top-notice{padding: 7px 10px; background-color: transparent; line-height: 1.3; margin: 8px auto; text-align: center;border: 1px solid rgba(187, 187, 187, 0.44);}
+.footer {left: 0;bottom: 0;width: 100%;margin: 20px auto 0;text-align: center;opacity: 0.7;border-top: 1px solid rgba(151, 147, 147, 0.3);flex: 0 0 auto;}
+.badge{font-size: 85%;font-weight: 600;text-transform: uppercase;letter-spacing: 1px}
+.filter-fund{text-align: right;}
+body.fullWidth_container .MuiContainer-maxWidthMd {max-width: 1920px!important;}
+.MuiToolbar-gutters{padding-left: 0px!important;padding-right: 0px!important;}
+.fund-page-btns, .fund-page-charts{text-align: center;}
+.fund-page-btns ul, .fund-page-charts > div{list-style: none;padding: 0; margin: 0;display: inline-block;}
+.fund-page-btns ul li{padding: 0; margin: 0;display: inline-block;}
+.fund-page-charts > div > div{display: inline-block;border: 1px solid rgba(132, 132, 132, 0.15);padding:10px 0px 0px 0px;margin:5px;}
+.createfund-btn{text-align: right;}
+.filter-fund{text-align: left;}
+.screen-toggle-bar{position: absolute;top: calc(50% - 12px);right: 10px;}
+.MuiTabs-root{text-align: center!important;display: block!important;}
+.MuiTabs-fixed{width: auto!important;display: inline-block!important;}
+.btn-group .btn{margin: 1px !important;}
+@media only screen and (min-width: 960px) {
+  body.fullWidth_container span.theme-toggle-btn{margin-right:90px}
+  body.tablet_container .MuiContainer-maxWidthMd {max-width: 770px!important;}
+  body.laptop_container .MuiContainer-maxWidthMd {max-width: 960px!important;}
+  /*body.laptop_container .fund-page-charts > div > div{width: 400px!important;height: 240px!important;}*/
+}
+@media only screen and (max-width: 1130px) {
+  .screen-toggle-bar{display: none;}
+  body.fullWidth_container span.theme-toggle-btn{margin-right:0px}
+}
+@media only screen and (max-width: 780px) {
+  .btn-group {display: block!important;}
+  .center-xs{text-align: center !important;border: 1px solid currentColor;}
+  .total-found{padding: 15px 0;}
+  .createfund-btn, .filter-fund{float: none!important}
+  .createfund-btn{text-align: left;}
+  .filter-fund{text-align: right;}
+  .createfund-btn button, .filter-fund button{display: inline-block;}
+  .fullscreen-toggle{display: none !important;}
+  /*.fund-page-charts > div > div{margin:5px 0;width: 300px!important;height: 250px!important;}*/
+}
+@media only screen and (max-width: 730px) {
+  .fund-page-charts > div > div{margin:5px 0;width: 320px!important;height: 180px!important;}
+}
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .btn-group {display: block!important;}
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .btn-group {display: block!important;}
+}
+@media only screen and (min-width: 1830px) {
+  /*body.fullWidth_container .fund-page-charts > div > div{width:420px!important; height:250px!important}*/
+  .createfund-btn{text-align: center;}
+  .filter-fund{text-align: center;}
+}
