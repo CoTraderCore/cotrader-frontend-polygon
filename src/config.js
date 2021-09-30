@@ -9,20 +9,20 @@ export const OneInchApi = 'https://api.1inch.exchange/v3.0/137/'
 // BSC
 export const NeworkID = 137
 // V9
-export const SmartFundRegistryADDRESS = ''
+export const SmartFundRegistryADDRESS = '0x992F6c414A6DA6A7470dfB9D61eFc6639e9fbb0E'
 
 export const EtherscanLink = 'https://bscscan.com/'
 
 // SHOULD UPDATE with new api
-export const APIEnpoint = !isLocal ? 'https://api-bsc.cotrader.com/' : 'http://localhost:9005/'
+export const APIEnpoint = !isLocal ? 'https://api-polygon.cotrader.com/' : 'http://localhost:9008/'
 
-export const PricePortalPancake = ""
+export const PricePortalPancake = "0x6d85Dd4672AFad01a28bdfA8b4323bE910999954"
 // pools, defi, 1inch
 export const ExchangePortalAddressFull = ''
 // only erc20
 export const ExchangePortalAddressLight = ''
-export const WETH = ''
-export const QuickSwapRouter = ''
+export const WETH = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
+export const QuickSwapRouter = '0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff'
 
 
 // // TEST NET BSC
