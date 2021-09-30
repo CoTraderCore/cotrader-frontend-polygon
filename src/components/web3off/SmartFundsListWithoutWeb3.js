@@ -241,9 +241,9 @@ class SmartFundsListWithoutWeb3 extends Component{
              <Card.Footer className="text-muted cardsAdditional">
              <small>
                <Row>
-               <Col>Fund profit in BNB: { fromWei(String(item.profitInETH), 'ether')}</Col>
+               <Col>Fund profit in MATIC: { fromWei(String(item.profitInETH), 'ether')}</Col>
                <Col>Fund profit in USD: { fromWei(String(item.profitInUSD), 'ether')}</Col>
-               <Col>Fund value in BNB: { fromWei(String(item.valueInETH), 'ether') }</Col>
+               <Col>Fund value in MATIC: { fromWei(String(item.valueInETH), 'ether') }</Col>
                <Col>Fund value in USD: { fromWei(String(item.valueInUSD), 'ether') }</Col>
                </Row>
              </small>

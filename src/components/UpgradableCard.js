@@ -22,9 +22,9 @@ class UpgradableCard extends Component {
       <Card.Footer className="text-muted cardsAdditional">
       <small>
         <Row>
-        <Col>Fund profit in BNB: { fromWei(String(this.state.profitInETH)) }</Col>
+        <Col>Fund profit in MATIC: { fromWei(String(this.state.profitInETH)) }</Col>
         <Col>Fund profit in USD: { fromWei(String(this.state.profitInUSD)) }</Col>
-        <Col>Fund value in BNB: { fromWei(String(this.state.valueInETH)) }</Col>
+        <Col>Fund value in MATIC: { fromWei(String(this.state.valueInETH)) }</Col>
         <Col>Fund value in USD: { fromWei(String(this.state.valueInUSD)) }</Col>
         </Row>
       </small>

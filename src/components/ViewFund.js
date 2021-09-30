@@ -234,9 +234,9 @@ class ViewFund extends Component {
         <Alert variant="dark">
         <small>
         <Row>
-         <Col>Fund profit: { this.props.web3.utils.fromWei(String(this.state.profitInETH))} in BNB</Col>
+         <Col>Fund profit: { this.props.web3.utils.fromWei(String(this.state.profitInETH))} in MATIC</Col>
          <Col>Fund profit: { this.props.web3.utils.fromWei(String(this.state.profitInUSD))} in USD</Col>
-         <Col>Fund value: {this.props.web3.utils.fromWei(String(this.state.valueInETH))} in BNB</Col>
+         <Col>Fund value: {this.props.web3.utils.fromWei(String(this.state.valueInETH))} in MATIC</Col>
          <Col>Fund value: {this.props.web3.utils.fromWei(String(this.state.valueInUSD))} in USD</Col>
         </Row>
         </small>
@@ -314,7 +314,7 @@ class ViewFund extends Component {
          <tr>
            <th>Token</th>
            <th>% from fund</th>
-           <th>Value in BNB</th>
+           <th>Value in MATIC</th>
            <th>Balance</th>
          </tr>
        </thead>

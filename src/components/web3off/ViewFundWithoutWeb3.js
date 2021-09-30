@@ -112,9 +112,9 @@ class ViewFundWithoutWeb3 extends Component {
         <Alert variant="dark">
         <small>
         <Row>
-         <Col>Fund profit in BNB: { fromWei(String(this.state.profitInETH), 'ether')}</Col>
+         <Col>Fund profit in MATIC: { fromWei(String(this.state.profitInETH), 'ether')}</Col>
          <Col>Fund profit in USD: { fromWei(String(this.state.profitInUSD), 'ether')}</Col>
-         <Col>Fund value in BNB: {fromWei(String(this.state.valueInETH), 'ether')}</Col>
+         <Col>Fund value in MATIC: {fromWei(String(this.state.valueInETH), 'ether')}</Col>
          <Col>Fund value in USD: {fromWei(String(this.state.valueInUSD), 'ether')}</Col>
         </Row>
         </small>
@@ -168,7 +168,7 @@ class ViewFundWithoutWeb3 extends Component {
          <tr>
            <th>Token</th>
            <th>% from fund</th>
-           <th>Value in BNB</th>
+           <th>Value in MATIC</th>
            <th>Balance</th>
          </tr>
        </thead>

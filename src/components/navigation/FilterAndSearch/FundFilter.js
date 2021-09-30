@@ -153,7 +153,7 @@ class FundFilter extends Component {
 
        <Form.Group>
         <Form.Text>
-        Min value in BNB
+        Min value in MATIC
         </Form.Text>
         <Form.Control
         type="number"
@@ -177,7 +177,7 @@ class FundFilter extends Component {
 
        <Form.Group>
         <Form.Text>
-        Min profit in BNB
+        Min profit in MATIC
         </Form.Text>
         <Form.Control
         type="number"

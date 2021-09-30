@@ -69,7 +69,7 @@ class UserHoldings extends Component {
             (
               <React.Fragment>
               <ListGroup>
-              <ListGroup.Item>My deposit in BNB value: { fromWei(this.state.calculateAddressValue) }</ListGroup.Item>
+              <ListGroup.Item>My deposit in MATIC value: { fromWei(this.state.calculateAddressValue) }</ListGroup.Item>
               <ListGroup.Item>My profit : { fromWei(this.state.calculateAddressProfit) }</ListGroup.Item>
               <ListGroup.Item>My holding in percent of fund value: { this.state.percentOfFundValue } %</ListGroup.Item>
               </ListGroup>

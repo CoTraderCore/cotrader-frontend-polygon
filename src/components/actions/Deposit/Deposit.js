@@ -53,7 +53,7 @@ class Deposit extends Component {
               <br/>
               <Form>
               {
-                this.props.mainAsset === "ETH" || this.props.mainAsset === "BNB"
+                this.props.mainAsset === "ETH" || this.props.mainAsset === "MATIC"
                 ?
                 (
                   <DepositETH

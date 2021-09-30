@@ -39,7 +39,7 @@ class CreateNewFund extends Component {
         const percent = this.state.Percent * 100 // MUL Percent by 100
         const verifiacton = this.state.TradeVerification
         const block = await this.props.web3.eth.getBlockNumber()
-        const coreAsset = this.state.FundAsset === "BNB" ? ETH_ADDRESS : USD_ADDRESS
+        const coreAsset = this.state.FundAsset === "MATIC" ? ETH_ADDRESS : USD_ADDRESS
 
         console.log(name, percent, coreAsset, verifiacton, this.state.FundAsset)
 
@@ -125,7 +125,7 @@ class CreateNewFund extends Component {
           <hr/>
 
           <Form.Group>
-          <Form.Label>Performance Fee % <UserInfo  info="This is the % the fund manager earns for the profits earned, relative to main fund asset (BNB, USD or COT)."/></Form.Label>
+          <Form.Label>Performance Fee % <UserInfo  info="This is the % the fund manager earns for the profits earned, relative to main fund asset (MATIC, USD)."/></Form.Label>
           <TextField
             id="outlined-name"
             label="Performance Fee"
@@ -153,7 +153,7 @@ class CreateNewFund extends Component {
           <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Main fund asset % <UserInfo  info="With the help of this asset, investors will invest, calculate fund value ect"/></Form.Label>
           <Form.Control as="select" name="FundAsset" onChange={e => this.change(e)}>
-            <option>BNB</option>
+            <option>MATIC</option>
             <option>USD</option>
           </Form.Control>
           </Form.Group>
