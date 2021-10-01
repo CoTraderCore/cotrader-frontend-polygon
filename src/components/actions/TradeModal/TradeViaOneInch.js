@@ -79,8 +79,6 @@ class TradeViaOneInch extends Component {
     ? WETH
     : _tokenTo
 
-    // console.log("PricePortalPancake", PricePortalPancake)
-
     const pricePortal = new this.props.web3.eth.Contract(PricePortalPancakeABI, PricePortalPancake)
     const data = await pricePortal.methods.findConnector(tokenTo).call()
     return data[0]
@@ -265,22 +263,12 @@ class TradeViaOneInch extends Component {
         alert("Can not prepare data from 1 inch api")
         console.log("1inch error ", e)
       }
-      console.log(
-        this.state.sendFrom,
-        amountInWei,
-        this.state.sendTo,
-        0,
-        proof,
-        positions,
-        additionalData,
-        minReturn
-      )
       // trade
       smartFund.methods.trade(
           this.state.sendFrom,
           amountInWei,
           this.state.sendTo,
-          0,
+          3,
           proof,
           positions,
           additionalData,
@@ -304,12 +292,13 @@ class TradeViaOneInch extends Component {
 
   // Validation input and smart fund balance
   validation = async () => {
-    console.log("this.state.sendTo", this.state.sendTo)
-    const connector = await this.verifyConnector(this.state.sendTo)
-    if(connector === "0x0000000000000000000000000000000000000000"){
-      this.setState({ ERRORText:'Sorry this pair not supported'})
-    }
-    else if(this.state.AmountSend === 0){
+    // // FOR UNKNOWN MATIC REASON THIS NOT WORKS
+    // const connector = await this.verifyConnector(this.state.sendTo)
+    // if(connector === "0x0000000000000000000000000000000000000000"){
+    //   this.setState({ ERRORText:'Sorry this pair not supported'})
+    // }
+    // else if(this.state.AmountSend === 0){
+    if(this.state.AmountSend === 0){
 
     // if(this.state.AmountSend === 0){
       this.setState({ ERRORText:'Please input amount'})
