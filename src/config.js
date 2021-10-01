@@ -8,13 +8,13 @@ export const OneInchApi = 'https://api.1inch.exchange/v3.0/137/'
 
 export const NeworkID = 137
 export const SmartFundRegistryADDRESS = '0x992F6c414A6DA6A7470dfB9D61eFc6639e9fbb0E'
-export const EtherscanLink = 'https://bscscan.com/'
+export const EtherscanLink = 'https://polygonscan.com/'
 export const APIEnpoint = !isLocal ? 'https://api-polygon.cotrader.com/' : 'http://localhost:9008/'
 export const PricePortalPancake = "0x6d85Dd4672AFad01a28bdfA8b4323bE910999954"
 export const ExchangePortalAddressLight = ''
 export const WETH = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
 export const QuickSwapRouter = '0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff'
-export const USD_ADDRESS = "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063" // DAI 
+export const USD_ADDRESS = "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063" // DAI
 
 
 /* TODO: MOVE ALL ABI to a separate file ABI.js*/

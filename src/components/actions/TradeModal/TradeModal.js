@@ -21,7 +21,7 @@ import SetGasPrice from '../../settings/SetGasPrice'
 
 // trade modals
 import TradeViaOneInch from './TradeViaOneInch'
-import TradeViaQuickSwap from './TradeViaQuickSwap'
+// import TradeViaQuickSwap from './TradeViaQuickSwap'
 
 
 class TradeModal extends Component {
@@ -99,17 +99,6 @@ class TradeModal extends Component {
           <Tabs defaultActiveKey="oneInch" id="trade-tabs">
             <Tab eventKey="oneInch" title="1 inch">
               <TradeViaOneInch
-                web3={this.props.web3}
-                accounts={this.props.accounts}
-                smartFundAddress={this.props.smartFundAddress}
-                pending={this.props.pending}
-                version={this.props.version}
-                exchangePortalAddress={this.state.exchangePortalAddress}
-                closeModal={this.closeModal}
-              />
-            </Tab>
-            <Tab eventKey="quickSwap" title="QuickSwap">
-              <TradeViaQuickSwap
                 web3={this.props.web3}
                 accounts={this.props.accounts}
                 smartFundAddress={this.props.smartFundAddress}

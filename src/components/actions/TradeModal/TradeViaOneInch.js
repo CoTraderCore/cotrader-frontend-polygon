@@ -28,7 +28,6 @@ import { toWeiByDecimalsInput, fromWeiByDecimalsInput } from '../../../utils/wei
 import checkTokensLimit from '../../../utils/checkTokensLimit'
 import Pending from '../../templates/Spiners/Pending'
 import BigNumber from 'bignumber.js'
-import { testnetTokens, testnetSymbols } from '../../../storage/testnetTokens'
 import SelectToken from './SelectToken'
 
 
@@ -38,7 +37,7 @@ class TradeViaOneInch extends Component {
 
     this.state = {
       Send: 'MATIC',
-      Recive:'BUSD',
+      Recive:'DAI',
       AmountSend:0,
       AmountRecive:0,
       slippageFrom:0,
@@ -87,7 +86,7 @@ class TradeViaOneInch extends Component {
 
   // get tokens addresses and symbols from paraswap api
   initData = async () => {
-    if(NeworkID === 56){
+    if(NeworkID === 137){
       // get tokens from api
       try{
         let data = await axios.get(OneInchApi + 'tokens')
@@ -109,12 +108,6 @@ class TradeViaOneInch extends Component {
         alert("Can not get data from api, please try again latter")
         console.log(e)
       }
-    }
-    else if (NeworkID === 97){
-      // just provide for test few testnet tokens from storage
-      const tokens = testnetTokens
-      const symbols = testnetSymbols
-      this.setState({ tokens, symbols })
     }
     else{
       alert("There are no tokens for your ETH network")
@@ -343,7 +336,7 @@ class TradeViaOneInch extends Component {
 
   gitRateByNetworkId = async (from, to, amount, decimalsFrom, decimalsTo) => {
     // get value from 1 inch proto
-    if(NeworkID === 56){
+    if(NeworkID === 137){
       const src = toWeiByDecimalsInput(decimalsFrom, amount.toString(10))
       try{
         return await this.getRateFrom1inchApi(from, to, src)
