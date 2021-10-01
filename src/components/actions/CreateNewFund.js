@@ -4,6 +4,7 @@ import {
   APIEnpoint,
   SmartFundRegistryABIV9,
   SmartFundRegistryADDRESS,
+  USD_ADDRESS
 } from '../../config.js'
 
 import { Modal, Form } from "react-bootstrap"
@@ -15,7 +16,6 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import axios from 'axios'
 
 const ETH_ADDRESS = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
-const USD_ADDRESS = '0xe9e7cea3dedca5984780bafc599bd69add087d56'
 
 class CreateNewFund extends Component {
   constructor(props, context) {
