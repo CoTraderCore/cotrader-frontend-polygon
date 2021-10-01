@@ -9,8 +9,8 @@ import {
   APIEnpoint,
   ExchangePortalAddressLight,
   ExchangePortalABIV6,
-  PricePortalPancake,
-  PricePortalPancakeABI,
+  PricePortalUNI,
+  PricePortalUNIABI,
   WETH
 } from '../../../config.js'
 
@@ -79,7 +79,7 @@ class TradeViaOneInch extends Component {
     ? WETH
     : _tokenTo
 
-    const pricePortal = new this.props.web3.eth.Contract(PricePortalPancakeABI, PricePortalPancake)
+    const pricePortal = new this.props.web3.eth.Contract(PricePortalUNIABI, PricePortalUNI)
     const data = await pricePortal.methods.findConnector(tokenTo).call()
     return data[0]
   }
@@ -292,17 +292,15 @@ class TradeViaOneInch extends Component {
 
   // Validation input and smart fund balance
   validation = async () => {
-    // // FOR UNKNOWN MATIC REASON THIS NOT WORKS
-    // const connector = await this.verifyConnector(this.state.sendTo)
-    // if(connector === "0x0000000000000000000000000000000000000000"){
-    //   this.setState({ ERRORText:'Sorry this pair not supported'})
-    // }
-    // else if(this.state.AmountSend === 0){
-    if(this.state.AmountSend === 0){
-
-    // if(this.state.AmountSend === 0){
+    // FOR UNKNOWN MATIC REASON THIS NOT WORKS
+    const connector = await this.verifyConnector(this.state.sendTo)
+    if(connector === "0x0000000000000000000000000000000000000000"){
+      this.setState({ ERRORText:'Sorry this pair not supported'})
+    }
+    else if(this.state.AmountSend === 0){
       this.setState({ ERRORText:'Please input amount'})
-    }else if(this.state.Send === this.state.Recive){
+    }
+    else if(this.state.Send === this.state.Recive){
       this.setState({ ERRORText:'Token directions can not be the same'})
     }
     else{
