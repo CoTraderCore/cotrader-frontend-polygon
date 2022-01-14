@@ -15,6 +15,7 @@ export const ExchangePortalAddressLight = ''
 export const WETH = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
 export const QuickSwapRouter = '0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff'
 export const USD_ADDRESS = "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063" // DAI
+export const ManagerStatusAddress = '0x3ffa0CbFEf7E3a0112CCf7333193ac849248F375'
 
 
 /* TODO: MOVE ALL ABI to a separate file ABI.js*/
@@ -5254,5 +5255,64 @@ export const UNIRouterABI = [
 	{
 		"stateMutability": "payable",
 		"type": "receive"
+	}
+]
+
+export const ManagerStatusABI = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "id",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "content",
+				"type": "string"
+			}
+		],
+		"name": "StatusUpdated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "statuses",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_fundAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_content",
+				"type": "string"
+			}
+		],
+		"name": "updateStatus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	}
 ]
