@@ -78,7 +78,7 @@ class DepositERC20 extends Component {
     ).call()
     const userBalanceFromWei = fromWeiByDecimalsInput(ercAssetDecimals, userWalletBalance)
 
-    if(this.state.DepositValue > Number(userBalanceFromWei).toFixed(8)){
+    if(this.state.DepositValue > userBalanceFromWei){
       this.setState({ ValueError:`Not enough ${this.state.symbol}` })
       return
     }
