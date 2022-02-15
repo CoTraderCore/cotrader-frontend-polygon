@@ -19,8 +19,18 @@ class DepositETH extends Component {
 
     this.state = {
       DepositValue:0,
-      ValueError: ''
+      ValueError: '',
+      ethBalance:0
     }
+  }
+
+  componentDidMount = async () => {
+    const ethBalanceInWei = await this.props.web3.eth.getBalance(this.props.accounts[0])
+    const ethBalance = fromWei(ethBalanceInWei)
+
+    this.setState({
+      ethBalance
+    })
   }
 
   validation = async () => {
@@ -69,12 +79,23 @@ class DepositETH extends Component {
     return (
       <>
       <Form.Group>
-      <Form.Label>Amount of {this.props.mainAsset}</Form.Label>
+      <Form.Label>
+      Enter {this.props.mainAsset}
+      <p
+       style={{color:'blue'}}
+       onClick={() => this.setState({
+        DepositValue:this.state.ethBalance
+       })}
+      >
+        (balance:{this.state.ethBalance})
+      </p>
+      </Form.Label>
       <Form.Control
       type="number"
       min="0"
       placeholder="Amount"
       name="DepositValue"
+      value={this.state.DepositValue}
       onChange={e => this.setState({ DepositValue:e.target.value })}
       />
       {

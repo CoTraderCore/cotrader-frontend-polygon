@@ -25,19 +25,39 @@ class DepositERC20 extends Component {
       ercAssetContract:null,
       userWalletBalance:'0',
       isApproved:true,
-      aprovePending:false
+      aprovePending:false,
+      symbol:'...',
+      tokenBalance: 0
     }
+  }
+
+  componentDidMount = async () => {
+    const fund = new this.props.web3.eth.Contract(SmartFundABIV7, this.props.address)
+    const ercAssetAddress = await fund.methods.coreFundAsset().call()
+    const ercAssetContract = new this.props.web3.eth.Contract(ERC20ABI, ercAssetAddress)
+    const symbol = await ercAssetContract.methods.symbol().call()
+    const decimals = await ercAssetContract.methods.decimals().call()
+    const tokenBalanceInWei = await ercAssetContract.methods.balanceOf(this.props.accounts[0]).call()
+    const tokenBalance = fromWeiByDecimalsInput(decimals, tokenBalanceInWei)
+
+    this.setState({
+      ercAssetAddress,
+      ercAssetContract,
+      symbol,
+      tokenBalanceInWei,
+      tokenBalance
+    })
   }
 
   componentDidUpdate = async (prevProps, prevState) => {
     if(prevState.DepositValue !== this.state.DepositValue){
-      await this.updateERC20DepositInfo()
+      await this.updateAllowance()
     }
   }
 
   checkAllowanceInterval(){
     let timerId = setInterval(async () => {
-      const isApproved = await this.updateERC20DepositInfo()
+      const isApproved = await this.updateAllowance()
       console.log("isApproved", isApproved)
       if(isApproved){
         clearInterval(timerId)
@@ -58,34 +78,28 @@ class DepositERC20 extends Component {
     ).call()
     const userBalanceFromWei = fromWeiByDecimalsInput(ercAssetDecimals, userWalletBalance)
 
-    if(Number(this.state.DepositValue) > Number(userBalanceFromWei)){
-      this.setState({ ValueError:`Not enough ${this.props.mainAsset}` })
+    if(this.state.DepositValue > Number(userBalanceFromWei).toFixed(8)){
+      this.setState({ ValueError:`Not enough ${this.state.symbol}` })
       return
     }
 
     this.depositERC20()
   }
 
-  updateERC20DepositInfo = async() => {
-    const fund = new this.props.web3.eth.Contract(SmartFundABIV7, this.props.address)
-    const ercAssetAddress = await fund.methods.coreFundAsset().call()
-    const ercAssetContract = new this.props.web3.eth.Contract(ERC20ABI, ercAssetAddress)
-
-    const allowance = await ercAssetContract.methods.allowance(
+  updateAllowance = async() => {
+    const allowance = await this.state.ercAssetContract.methods.allowance(
       this.props.accounts[0],
       this.props.address
     ).call()
 
     const allowanceFromWei = fromWeiByDecimalsInput(
-      await ercAssetContract.methods.decimals().call(),
+      await this.state.ercAssetContract.methods.decimals().call(),
       allowance
     )
 
     const isApproved = Number(allowanceFromWei) > Number(this.state.DepositValue)
 
     this.setState({
-      ercAssetAddress,
-      ercAssetContract,
       isApproved
     })
 
@@ -163,12 +177,23 @@ class DepositERC20 extends Component {
     return (
       <>
       <Form.Group>
-      <Form.Label>Amount of {this.props.mainAsset}</Form.Label>
+      <Form.Label>
+      Enter {this.state.symbol}
+      <p
+       style={{color:'blue'}}
+       onClick={() => this.setState({
+        DepositValue:this.state.tokenBalance
+       })}
+      >
+        (balance:{this.state.tokenBalance})
+      </p>
+      </Form.Label>
       <Form.Control
       type="number"
       min="0"
       placeholder="Amount"
       name="DepositValue"
+      value={this.state.DepositValue}
       onChange={e => this.setState({ DepositValue:e.target.value })}
       />
       {
